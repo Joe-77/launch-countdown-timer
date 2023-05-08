@@ -1,0 +1,136 @@
+/* Start Global Rules */
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Dark-desaturated-blue: hsl(236, 21%, 26%);
+  --Very-dark-blue: hsl(235, 16%, 14%);
+  --Very-dark: hsl(234, 17%, 12%);
+  --Grayish-blue: hsl(237, 18%, 59%);
+  --Soft-red: hsl(345, 95%, 68%);
+}
+body {
+  font-family: "Red Hat Text", sans-serif;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* End Global Rules */
+
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #211d2b;
+  background-image: url(../img/bg-stars.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.all {
+  display: flex;
+  gap: 40px;
+}
+
+.title {
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+.counter div p {
+  font-size: 30px;
+  color: var(--Soft-red);
+}
+.counter div p::before {
+  content: "";
+  position: absolute;
+  width: 75px;
+  height: 1px;
+  background-color: #0000005e;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+.counter p {
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: var(--Grayish-blue);
+  text-transform: uppercase;
+}
+
+.counter div {
+  background-image: linear-gradient(to top, #2c2c44, #34364f);
+  width: 80px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+.counter div::before,
+.counter div::after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: black;
+}
+.counter div::before {
+  left: -1px;
+}
+.counter div::after {
+  right: -1px;
+}
+
+.img {
+  background-image: url(../img/pattern-hills.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 150px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.social {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+}
+.social i {
+  color: var(--Grayish-blue);
+  width: 30px;
+  font-size: 26px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.social i:hover {
+  color: var(--Soft-red);
+}
+
+@media (max-width: 460px) {
+  .all {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    column-gap: 50px;
+  }
+  .img {
+    height: 115px;
+  }
+  .social {
+    bottom: 40px;
+  }
+}
